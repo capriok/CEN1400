@@ -17,5 +17,6 @@
 }
 
 .logo-cont img {
+	max-width: 300px;
 	width: 50%;
 }
