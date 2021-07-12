@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+		<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+		<link rel="stylesheet" href="./style.css">
+
+		<title>Homepage</title>
+	</head>
+	<body>
+		<div data-role="page" style="height: 100vh">
+			<div data-role="header" data-theme="b">
+				<h1>Kyle Caprio</h1>
+			</div>
+
+			<div class="ui-content">
+				<h3>Software Developer.</h3>
+				<p>Based in Arizona.</p>
+				<div class="logo-cont">
+					<img src="/assets/k_logo.png" alt="">
+				</div>
+			</div>
+
+			<div data-role="content">
+				<h3>Explore</h3>
+				<br/>
+					<ul data-role="listview">
+						<li><a href="#aboutme" data-role="button" data-icon="info" class="ui-nodisc-icon
+								ui-alt-icon">About Me</a></li>
+						<li><a href="#favorites" data-role="button" data-icon="star" class="ui-nodisc-icon
+								ui-alt-icon">Favorites</a></li>
+						<li><a href="#arizona" data-role="button" data-icon="location" class="ui-nodisc-icon
+								ui-alt-icon">Arizona</a></li>
+					</ul>
+				</div>
+
+				<div data-role="footer" data-theme="b">
+					<h1>Kyle Caprio &copy; 2021</h1>
+				</div>
+			</div>
+
+			<div id="aboutme" data-role="page">
+				<div data-role="header" data-add-back-btn="true" data-theme="b">
+					<h1>About Me</h1>
+				</div>
+				<div data-role="content">
+					<h3>Hey there</h3>
+					<p>My name is Kyle. I'm a self taught software developer based in Arizona.
+						I found my passion for learning computer sciences at the age of 16 and have been programming
+						ever since. I've dedicated countless hours to learning and expanding this passion. Being able
+						to effectively teach myself is something I am most proud of about myself. I have developed an
+						avid work ethic and disciplinary skills along my journey in life. </p>
+					<div>
+						<p>
+							Check out my portfolio <a href="https://kylecaprio.dev">here.</a>
+						</p>
+					</div>
+				</div>
+				<div data-role="footer" data-theme="b">
+					<h4>Kyle Caprio &copy; 2021</h4>
+				</div>
+			</div>
+
+			<div id="favorites" data-role="page">
+				<div data-role="header" data-add-back-btn="true" data-theme="b">
+					<h1>Favorites</h1>
+				</div>
+				<div data-role="footer" data-theme="b">
+					<h4>Kyle Caprio &copy; 2021</h4>
+				</div>
+			</div>
+
+			<div id="arizona" data-role="page">
+				<div data-role="header" data-add-back-btn="true" data-theme="b">
+					<h1>Arizona</h1>
+				</div>
+				<div data-role="main">
+					<div class="ui-content">
+						<h3>Arizona, The Grand Canyon State</h3>
+						<p id="fact-target"></p>
+						<div style="display: flex; justify-content: center; margin-bottom: 50px;">
+							<img style="width: 50%;" src="../assets/arizona.jpg" alt="">
+						</div>
+					</div>
+					<div data-role="footer" data-theme="b">
+						<h1>Kyle Caprio &copy; 2021</h1>
+					</div>
+				</div>
+			</div>
+
+		</body>
+		<script>
+				const renderRandomFact = () => {
+					const randomFact = arizonaFacts[Math.floor(Math.random() * 10)]
+					document.getElementById('fact-target').innerText = randomFact
+				}
+				
+				const arizonaFacts = {
+					0: 'There are 22 national parks and monuments in Arizona.',
+					1: 'There are more than 100 wineries and 22 varietals of wine produced in Arizona.',
+					2: 'Arizona is home to 75+ licensed craft breweries (and growing).',
+					3: 'Arizona chefs and restaurants have received more than 50 James Beard nominations since 2010',
+					4: 'Arizonas Sonoran Desert is the only place on earth where the iconic saguaro cactus grows.',
+					5: 'Arizona has 35 state parks and natural areas preserving the states natural, cultural and recreational resources.',
+					6: 'The Arizona Trail is 800 miles long and is dedicated to hiking, mountain biking, horseback riding and more.',
+					7: 'Two of the top-rated waterfalls in the United States are located in Arizona: Grand Falls and Havasu Falls.',
+					8: 'The Grand Canyon National Park is one of the Seven Natural Wonders of the World, and the only one in the United States.',
+					9: 'According to Travel + Leisure three of the 10 worlds best destination spas are in Arizona.',
+				}
+	
+				document.onload = renderRandomFact()
+			</script>
+	</html>
