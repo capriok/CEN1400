@@ -34,7 +34,8 @@
 
 		<script>
 			const renderRandomFact = () => {
-				const randomFact = arizonaFacts[Math.floor(Math.random() * 10)]
+				const randomFactIndex = Math.floor(Math.random() * Object.keys(arizonaFacts).length)
+				const randomFact = arizonaFacts[randomFactIndex]
 				document.getElementById('fact-target').innerText = randomFact
 			}
 			
