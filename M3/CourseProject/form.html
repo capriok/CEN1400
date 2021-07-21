@@ -83,9 +83,9 @@
 			}
 			console.log({Form: form})
 
-			localStorage.setItem('storage', JSON.stringify(form))
+			localStorage.setItem('project-storage', JSON.stringify(form))
 
-			const storage = localStorage.getItem('storage')
+			const storage = localStorage.getItem('project-storage')
 
 			if (storage) {
 				const ls = JSON.parse(storage)
@@ -108,7 +108,7 @@
 
 	function clearLocalStorage () {
 		res.empty()
-		localStorage.clear()
+		localStorage.removeItem('project-storage')
 	}
 	
 	</script>

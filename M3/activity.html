@@ -168,11 +168,11 @@
 		if (!supportsLocalStorage()) {
 			return err.append('Your browser does not support localStorage.')
 		} else {
-			localStorage.setItem('storage', JSON.stringify({
+			localStorage.setItem('activity-storage', JSON.stringify({
 				fname:fname.val(), lname:lname.val(), age:age.val()
 			}))
-			if (localStorage.getItem('storage')) {
-				const ls = JSON.parse(localStorage.getItem('storage'))
+			if (localStorage.getItem('activity-storage')) {
+				const ls = JSON.parse(localStorage.getItem('activity-storage'))
 				res.empty()
 				res.append(`<div>First Name: ${ls.fname}</div>`)
 				res.append(`<div>Last Name: ${ls.lname}</div>`)
@@ -187,7 +187,7 @@
 
 	function clearLocalStorage () {
 		res.empty()
-		localStorage.clear()
+		localStorage.removeItem('activity-storage')
 	}
 	
 	</script>
