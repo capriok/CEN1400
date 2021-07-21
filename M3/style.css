@@ -1,0 +1,26 @@
+[data-role="page"] {
+	height: 100%;
+	position: relative;
+}
+[data-role="footer"] {
+	bottom: 0;
+	position: absolute;
+	top: auto;
+	width: 100%;
+}
+
+.logo-cont {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.logo-cont img {
+	max-width: 300px;
+	width: 50%;
+}
+
+header img {
+	width: 100%;
+}

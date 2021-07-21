@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+		<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+		<link rel="stylesheet" href="../style.css">
+	</head>
+	<body>
+		<div id="arizona" data-role="page">
+			<div data-role="header" data-add-back-btn="true" data-theme="b">
+				<h1>Arizona</h1>
+			</div>
+			<div data-role="main">
+				<div class="ui-content">
+					<h3>Arizona, The Grand Canyon State</h3>
+					<br />
+					<div style="display: flex; justify-content: center; margin-bottom: 50px;">
+						<img style="width: 50%;" src="../../assets/Arizona.png" alt="">
+					</div>
+					<p id="fact-target"></p>
+				</div>
+				<br />
+				<br />
+				<p><center>Refresh for a new fact</center></p>
+				<div data-role="footer" data-theme="b">
+					<h1>Kyle Caprio &copy; 2021</h1>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script>
+				(() => {
+				const arizonaFacts = {
+					0: 'There are 22 national parks and monuments in Arizona.',
+					1: 'There are more than 100 wineries and 22 varietals of wine produced in Arizona.',
+					2: 'Arizona is home to 75+ licensed craft breweries (and growing).',
+					3: 'Arizona chefs and restaurants have received more than 50 James Beard nominations since 2010',
+					4: 'Arizonas Sonoran Desert is the only place on earth where the iconic saguaro cactus grows.',
+					5: 'Arizona has 35 state parks and natural areas preserving the states natural, cultural and recreational resources.',
+					6: 'The Arizona Trail is 800 miles long and is dedicated to hiking, mountain biking, horseback riding and more.',
+					7: 'Two of the top-rated waterfalls in the United States are located in Arizona: Grand Falls and Havasu Falls.',
+					8: 'The Grand Canyon National Park is one of the Seven Natural Wonders of the World, and the only one in the United States.',
+					9: 'According to Travel + Leisure three of the 10 worlds best destination spas are in Arizona.',
+				}
+
+				const randomFact = arizonaFacts[Math.floor(Math.random() * 10)]
+				document.getElementById('fact-target').innerText = randomFact
+
+				})()
+			</script>
+</html>
