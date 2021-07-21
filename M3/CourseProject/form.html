@@ -92,6 +92,7 @@
 				console.log({Storage: ls});
 
 				res.empty()
+				res.append(`<h3>Current Storage</h3>`)
 				res.append(`<div>First Name: ${ls.fname}</div>`)
 				res.append(`<div>Last Name: ${ls.lname}</div>`)
 				res.append(`<div>State: ${ls.state}</div>`)
