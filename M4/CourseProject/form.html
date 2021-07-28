@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+		<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+		<link rel="stylesheet" href="../style.css">
+
+	</head>
+	<body>
+		<div id="form" data-role="page">
+			<div data-role="header" data-add-back-btn="true" data-theme="b">
+				<h1>Form</h1>
+			</div>
+			<div data-role="content">
+				<h3>Tell me about yourself</h3>
+				<form>
+
+					<div class="ui-grid-a">
+						<div class="ui-block-a">
+							<div class="ui-bar ui-bar-a">
+								<label for="fname">First Name</label>
+								<input type="text" id="fname" name="fname">
+							</div>
+						</div>
+						<div class="ui-block-b">
+							<div class="ui-bar ui-bar-a">
+								<label for="lname">Last Name</label>
+								<input type="text" id="lname" name="lname">
+							</div>
+						</div>
+						<div class="ui-block">
+							<div class="ui-bar ui-bar-a">
+								<label for="state">State</label>
+								<input type="text" id="state" name="state">
+							</div>
+						</div>
+						<div class="ui-block">
+							<div class="ui-bar ui-bar-a">
+								<label for="age">Age</label>
+								<input type="range" name="age" id="age" value="0" min="0" max="100">
+							</div>
+						</div>
+						<div class="ui-block">
+							<div class="ui-bar ui-bar-a">
+								<label for="sex">Sex:</label>
+								<select name="sex" id="sex" data-role="slider">
+									<option value="Male">Male</option>
+									<option value="Female">Female</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<br />
+					<input type="button" value="Submit Form" id="form-submit">
+					<input type="button" value="Clear Storage" id="clear-storage">
+					<div id="err"></div>
+					<div id="res"></div>
+				</form>
+			</div>
+			<div data-role="footer" data-theme="b">
+				<h4>Kyle Caprio &copy; 2021</h4>
+			</div>
+		</div>
+	</body>
+</html>
+
+<script>
+
+	$('#form-submit').click((e) => saveToLocalStorage(e))
+	$('#clear-storage').click(clearLocalStorage)
+
+	let err = $('#err')
+	let res = $('#res')
+	
+	function saveToLocalStorage(e) {	
+		e.preventDefault()
+		
+		let fname = $('#fname')
+		let lname = $('#lname')
+		let state = $('#state')
+		let age = $('#age')
+		let sex = $('#sex')
+
+	
+		if (!supportsLocalStorage()) {
+			return err.append('Your browser does not support localStorage.')
+		} else {
+			const form = {
+				fname:fname.val(), 
+				lname:lname.val(), 
+				state:state.val(),
+				age:age.val(),
+				sex:sex.val()
+			}
+			console.log({Form: form})
+
+			localStorage.setItem('project-storage', JSON.stringify(form))
+
+			const storage = localStorage.getItem('project-storage')
+
+			if (storage) {
+				const ls = JSON.parse(storage)
+				console.log({Storage: ls});
+
+				res.empty()
+				res.append(`<h3>Current Storage</h3>`)
+				res.append(`<div>First Name: ${ls.fname}</div>`)
+				res.append(`<div>Last Name: ${ls.lname}</div>`)
+				res.append(`<div>State: ${ls.state}</div>`)
+				res.append(`<div>Age: ${ls.age}</div>`)
+				res.append(`<div>Sex: ${ls.sex}</div>`)
+			}
+		}
+
+		function supportsLocalStorage() {
+			return typeof(Storage)!== 'undefined'
+		}
+	}
+
+	function clearLocalStorage () {
+		res.empty()
+		localStorage.removeItem('project-storage')
+	}
+	
+	</script>

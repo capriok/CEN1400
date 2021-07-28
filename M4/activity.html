@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+		<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+		<link rel="stylesheet" href="./style.css">
+
+		<title>Activity</title>
+	</head>
+	<body>
+		<div data-role="page">
+			<div data-role="header" data-theme="b">
+				<h1>Activity</h1>
+			</div>
+
+			<div class="ui-content">
+				<h3>jQuery Mobile Practice!</h3>
+			</div>
+
+			<div class="ui-content"><h3>Pages</h3></div>
+			<div data-role="content">
+				<ul data-role="listview" data-filter="true">
+					<li><a href="#aboutme">Biography</a></li>
+					<li><a href="#arizona">Arizona</a></li>
+					<li><a href="#dirtbikes">Dirtbikes</a></li>
+					<li><a href="#mythology">Mythology</a></li>
+					<li><a href="#form">Form</a></li>
+				</ul>
+			</div>
+
+			<div class="ui-content"><h3>Links</h3></div>
+			<div data-role="content">
+				<ul data-role="listview">
+					<li><a href="#panel">Open Panel</a></li>
+				</ul>
+			</div>
+
+			<div data-role="footer" data-theme="b">
+				<h1>Kyle Caprio &copy; 2021</h1>
+			</div>
+
+			<div data-role="panel" id="panel" data-display="overlay">
+				<div class="ui-content"><h3>Links</h3></div>
+				<ul data-role="listview">
+					<li><a href="https://kylecaprio.dev">Portofolio</a></li>
+					<li><a href="https://github.com/capriok">My GitHub</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div id="aboutme" data-role="page">
+			<div data-role="header" data-add-back-btn="true" data-theme="b">
+				<h1>About Me</h1>
+			</div>
+			<div data-role="content">
+				<h3>Hey there</h3>
+				<p>My name is Kyle. I'm a self taught software developer based in Arizona.
+					I found my passion for learning computer sciences at the age of 16 and have been programming
+					ever since. I've dedicated countless hours to learning and expanding this passion. Being able
+					to effectively teach myself is something I am most proud of about myself. I have developed an
+					avid work ethic and disciplinary skills along my journey in life.</p>
+			</div>
+			<div data-role="footer" data-theme="b">
+				<h4>Kyle Caprio &copy; 2021</h4>
+			</div>
+		</div>
+
+		<div id="arizona" data-role="page">
+			<div data-role="header" data-add-back-btn="true" data-theme="b">
+				<h1>Arizona</h1>
+			</div>
+			<div data-role="content">
+				<h3>Fun Fact</h3>
+				<p>There are 22 national parks and monuments in Arizona.</p>
+			</div>
+			<div data-role="footer" data-theme="b">
+				<h4>Kyle Caprio &copy; 2021</h4>
+			</div>
+		</div>
+
+		<div id="dirtbikes" data-role="page">
+			<div data-role="header" data-add-back-btn="true" data-theme="b">
+				<h1>Dirtbike Love</h1>
+			</div>
+			<div data-role="content">
+				<header>
+					<img src="../assets/CRF250.jpg" alt="">
+				</header>
+				<div class="list-view">
+					<ul>
+						<li>My Bike: 2019 Honda CRF 250</li>
+						<li>Fav Gear: Thor B/W gear set</li>
+						<li>Fav Location: Lake Elsinore, CA</li>
+					</ul>
+				</div>
+			</div>
+			<div data-role="footer" data-theme="b">
+				<h4>Kyle Caprio &copy; 2021</h4>
+			</div>
+		</div>
+
+		<div id="mythology" data-role="page">
+			<div data-role="header" data-add-back-btn="true" data-theme="b">
+				<h1>Mythology</h1>
+			</div>
+			<div data-role="content">
+				<header>
+					<img src="../assets/Anubis.jpg" alt="">
+				</header>
+				<h3>Most interesting</h3>
+				<div class="list-view">
+					<ol>
+						<li><a href="https://mythology.net/egyptian/egyptian-gods/anubis">Anubis</a></li>
+						<li><a href="https://mythology.net/greek/greek-gods/dionysus">Dionysus</a></li>
+						<li><a href="https://mythology.net/greek/greek-gods/triton">Triton</a></li>
+						<li><a href="https://mythology.net/others/concepts/baphomet">Baphomet</a></li>
+					</ol>
+				</div>
+			</div>
+			<div data-role="footer" data-theme="b">
+				<h4>Kyle Caprio &copy; 2021</h4>
+			</div>
+		</div>
+
+		<div id="form" data-role="page">
+			<div data-role="header" data-add-back-btn="true" data-theme="b">
+				<h1>Form</h1>
+			</div>
+			<div data-role="content">
+				<form>
+					<label for="fname">First Name</label>
+					<input type="text" id="fname" name="fname">
+					<label for="lname">Last Name</label>
+					<input type="text" id="lname" name="lname">
+					<label for="age">Age</label>
+					<input type="text" id="age" name="age">
+					<br />
+
+					<input type="button" value="Submit Form" id="form-submit">
+					<input type="button" value="Clear Storage" id="clear-storage">
+
+					<br />
+					<div id="err"></div>
+					<div id="res"></div>
+				</form>
+			</div>
+			<div data-role="footer" data-theme="b">
+				<h4>Kyle Caprio &copy; 2021</h4>
+			</div>
+		</div>
+
+	</body>
+</html>
+
+<script>
+
+	$('#form-submit').click((e) => saveToLocalStorage(e))
+	$('#clear-storage').click(clearLocalStorage)
+
+	let err = $('#err')
+	let res = $('#res')
+	
+	function saveToLocalStorage(e) {	
+		e.preventDefault()
+		
+		let fname = $('#fname')
+		let lname = $('#lname')
+		let age = $('#age')
+
+	
+		if (!supportsLocalStorage()) {
+			return err.append('Your browser does not support localStorage.')
+		} else {
+			localStorage.setItem('activity-storage', JSON.stringify({
+				fname:fname.val(), lname:lname.val(), age:age.val()
+			}))
+			if (localStorage.getItem('activity-storage')) {
+				const ls = JSON.parse(localStorage.getItem('activity-storage'))
+				res.empty()
+				res.append(`<div>First Name: ${ls.fname}</div>`)
+				res.append(`<div>Last Name: ${ls.lname}</div>`)
+				res.append(`<div>Age: ${ls.age}</div>`)
+			}
+		}
+
+		function supportsLocalStorage() {
+			return typeof(Storage)!== 'undefined'
+		}
+	}
+
+	function clearLocalStorage () {
+		res.empty()
+		localStorage.removeItem('activity-storage')
+	}
+	
+	</script>

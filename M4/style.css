@@ -19,10 +19,23 @@
 
 .logo-cont img,
 .arizona {
-	max-width: 300px;
-	width: 100%;
+	max-width: 200px;
+}
+@media (min-width: 500px) {
+	.logo-cont img,
+	.arizona {
+		width: 100%;
+		max-width: 300px;
+	}
 }
 
 header img {
 	width: 100%;
+}
+
+.activity > .ui-bar {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100px;
 }
