@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+		<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+		<link rel="stylesheet" href="./style.css">
+		<link rel="stylesheet" href="./theme/themes/M5CPTheme.css" />
+		<link rel="stylesheet" href="./theme/themes/jquery.mobile.icons.min.css" />
+	</head>
+	<body>
+		<div id="favorites" data-role="page">
+			<div data-role="header" data-add-back-btn="true" data-theme="b">
+				<h1>Favorites</h1>
+			</div>
+			<div class="ui-content">
+				<h3><center>Mine</center></h3>
+			</div>
+			<ul data-role="listview">
+				<li>
+					<a href="favorites/dirtbikes.html"
+						class="ui-nodisc-icon ui-alt-icon"
+						data-role="button"
+						data-icon="star">Dirtbikes</a>
+				</li>
+				<li>
+					<a href="favorites/mythology.html"
+						class="ui-nodisc-icon ui-alt-icon"
+						data-role="button"
+						data-icon="star">Mythology</a>
+				</li>
+				<li>
+					<a href="favorites/surfing.html"
+						class="ui-nodisc-icon ui-alt-icon"
+						data-role="button"
+						data-icon="star">Surfing</a>
+				</li>
+			</ul>
+
+			<div class="ui-content">
+				<h3><center>Yours</center></h3>
+			</div>
+
+			<div class="content">
+				<ul id="favs" data-role="listview" data-theme="b">
+				</ul>
+				<a href="#form" class="ui-btn">Add Favorite</a>
+				<a id="clear-storage" class="ui-btn">Clear Favorites</a>
+			</div>
+
+			<div data-role="footer" data-theme="b">
+				<h4>Kyle Caprio &copy; 2021</h4>
+			</div>
+
+			<div data-role="panel" id="form" data-display="overlay">
+				<h3>New Favorite</h3>
+				<form>
+					<label for="fav">Enter anything</label>
+					<input type="text" id="fav" name="fav">
+					<br />
+					<input type="button" value="Submit" id="form-submit">
+					<br />
+					<div id="err"></div>
+				</form>
+			</div>
+
+		</div>
+	</body>
+</html>
+
+<script>
+
+	$('#form-submit').click((e) => saveToLocalStorage(e))
+	$('#clear-storage').click(clearLocalStorage)
+
+	let err = $('#err')
+	let favs = $('#favs')
+
+	function saveToLocalStorage(e) {	
+		e.preventDefault()
+		
+		let fav = $('#fav')
+	
+		if (!supportsLocalStorage()) {
+			return err.append('Your browser does not support localStorage.')
+		} else {
+			const form = {
+				fav: fav.val(), 
+			}
+			const storage = localStorage.getItem('project-fav-storage')
+			
+			if (!storage) {
+				localStorage.setItem('project-fav-storage', JSON.stringify([form]))
+			} else {
+				const ls = JSON.parse(storage)
+				localStorage.setItem('project-fav-storage', JSON.stringify([...ls, form]))
+			}
+			fav.val('')
+			RenderFavs(localStorage.getItem('project-fav-storage'))
+		}
+	}
+
+	function RenderFavs (storage) {
+		if (!storage) {
+			return favs.append('<center>None Found.</center><br />')
+		}
+
+		const ls = JSON.parse(storage)
+		favs.empty()
+
+		ls.forEach((item) => {
+			let newFav = document.createElement('li')
+			newFav.textContent = item.fav
+			newFav.classList.add('ui-li-static','ui-body-inherit','ui-first-child','ui-last-child',)
+			favs.append(newFav)
+		})
+	}
+	
+	function clearLocalStorage () {
+		favs.empty()
+		localStorage.removeItem('project-fav-storage')
+		return favs.append('<center>None Found.</center><br />')
+	}
+
+	function supportsLocalStorage() {
+			return typeof(Storage)!== 'undefined'
+	}
+
+	document.onload = RenderFavs(localStorage.getItem('project-fav-storage'))
+	
+	</script>

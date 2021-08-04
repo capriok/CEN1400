@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+		<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+		<link rel="stylesheet" href="./style.css">
+		<link rel="stylesheet" href="./theme/themes/M5CPTheme.css" />
+		<link rel="stylesheet" href="./theme/themes/jquery.mobile.icons.min.css" />
+		<title>Homepage</title>
+	</head>
+	<body>
+		<div data-role="page">
+			<div data-role="header" data-theme="a">
+				<h1>Kyle Caprio</h1>
+			</div>
+
+			<div class="ui-content">
+				<h3>Software Developer.</h3>
+				<p>Based in Arizona.</p>
+				<div class="logo-cont">
+					<img src="../../assets/KLogo.png" alt="logo">
+				</div>
+			</div>
+
+			<div data-role="content">
+				<h3>Explore</h3>
+				<br/>
+					<ul data-role="listview" data-theme="a">
+						<li>
+							<a href="#bio"
+								class="ui-nodisc-icon ui-alt-icon"
+								data-role="button"
+								data-icon="info">Bio Panel</a>
+						</li>
+						<li>
+							<a href="arizona.html"
+								rel="external"
+								class="ui-nodisc-icon ui-alt-icon"
+								data-role="button"
+								data-icon="location">Arizona</a>
+						</li>
+						<li>
+							<a href="favorites.html"
+								rel="external"
+								class="ui-nodisc-icon ui-alt-icon"
+								data-role="button"
+								data-icon="star">Favorites</a>
+						</li>
+						<li>
+							<a href="form.html"
+								class="ui-nodisc-icon ui-alt-icon"
+								data-role="button"
+								data-icon="action">Grid Form</a>
+						</li>
+					</ul>
+				</div>
+
+				<div data-role="footer" data-theme="a">
+					<h1>Kyle Caprio &copy; 2021</h1>
+				</div>
+
+				<div data-role="panel" id="bio" data-display="overlay">
+					<h1>About Me</h1>
+					<p>My name is Kyle. I'm a self taught software developer based in Arizona.
+						I found my passion for learning computer sciences at the age of 16 and have been programming
+						ever since. I've dedicated countless hours to learning and expanding this passion. Being able
+						to effectively teach myself is something I am most proud of about myself. I have developed an
+						avid work ethic and disciplinary skills along my journey in life. </p>
+					<div>
+						<p>
+							Check out my portfolio <a href="https://kylecaprio.dev">here.</a>
+						</p>
+					</div>
+				</div>
+
+			</body>
+		</html>
