@@ -15,10 +15,11 @@ A place where I can show off a little about myself such as:
 
 ## Pages
 - /Homepage
+- /Arizona
 - /Favorites
-- + /Dirtbikes
-- + /Surfing
-- + /Mythology
+- ->/Dirtbikes
+- ->/Surfing
+- ->/Mythology
 - /Form
 
 #### /Homepage
@@ -28,7 +29,7 @@ A link to my software developer portfolio can be found here.
 #### /Arizona
 This page is dedicated to my beautiful state, Arizona. You will find the state flag and a random fact that is generated on page load. Refresh for a new one!
 
-### #/Favorites
+#### /Favorites
 Mine section:
 A list view that routes to the specific "favorite" of mine. Each favorite route has details about how they play into my life.
 
@@ -54,7 +55,10 @@ function GenerateRandomFact () {
 ```
 
 ## Course
-| Course  | Content  | Professor |
-| :------------ |:---------------:| -----:|
-| CEN1400      | Mobile Application Development | Gary Tanner |
+
+Professor: Gary Tanner
+Course: SD140/CEN1400
+Content: Mobile Application Development
+
+
 
